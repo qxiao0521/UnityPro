@@ -1,0 +1,21 @@
+SAVE_PATH='/home/z50021442/snn_darts_obj_detect/PyTorch_YOLO-Family/weights/voc/yolov2_tiny_bnn_rgb/'
+python train_rgb.py \
+--experiment_description 'test architecture [0,0,1,1,1,2,2,2,3,3] in voc' \
+-v yolov2_tiny_bnn_rgb \
+-t 2 \
+--batch_size 32 \
+-d voc \
+--lr 1e-1 \
+--device 7 \
+--max_epoch 50 \
+--eval_epoch 1 \
+--optimizer adamw \
+--fea_num_layers 10 \
+--net_arch_fea=''$SAVE_PATH'feature_network_path.npy' \
+--cell_arch_fea=''$SAVE_PATH'feature_genotype.npy' \
+--fea_filter_multiplier 32 \
+--fea_block_multiplier 3 \
+--fea_step 3 \
+--multi_anchor \
+--img_size 640 \
+--conf_thresh 0.1
